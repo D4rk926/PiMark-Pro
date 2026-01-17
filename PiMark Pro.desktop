@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=PiMark Pro
+Comment=Test your Raspberry Pi
+Exec=python3 /home/mr-guineapig/PiMark/PiMark.py
+Icon=utilities-terminal
+Terminal=false
+Type=Application
+Categories=Utility;
