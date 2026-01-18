@@ -4,6 +4,12 @@
 # PiMark Auto Installer
 # ----------------------------
 
+# Függőségek telepítése
+echo "Updating system and installing dependencies..."
+sudo apt update
+sudo apt install -y stress-ng
+pip install PyQt5 pyqtgraph psutil
+
 # Aktuális felhasználó HOME könyvtára
 USER_HOME=$(eval echo "~$USER")
 DOWNLOADS_DIR="$USER_HOME/Downloads"
@@ -34,7 +40,7 @@ if [ ! -d "$INSTALL_DIR" ]; then
     exit 1
 fi
 
-# →→→ MINDEN fájl törlése, kivéve PiMonitor.py-t ←←←
+# →→→ MINDEN fájl törlése, kivéve PiMark.py-t ←←←
 echo "Cleaning installation folder..."
 
 find "$INSTALL_DIR" -mindepth 1 -maxdepth 1 ! -name "PiMark.py" -exec rm -rf {} \;
